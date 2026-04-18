@@ -28,7 +28,7 @@ class OfferSeeder extends Seeder
             [
                 'qr_page_id' => 1,
                 'titolo' => 'Promo aprile/maggio',
-                'descrizione' => 'PER I MESI DI APRILE 2026/MAGGIO 2026 CON L’INTERVENTO DI VUOTATURA DELLE FOSSE BIOLOGICHE <strong style="color:red;">AVRAI DIRITTO AD UN TRATTAMENTO GRATUITO PER LA DISINFESTAZIONE DA BLATTE</strong> (VALIDO SOLO PER ABITAZIONI SINGOLE)',
+                'descrizione' => 'PER I MESI DI APRILE E MAGGIO CON L’INTERVENTO DI VUOTATURA DELLE FOSSE BIOLOGICHE <strong style="color:red;">AVRAI DIRITTO AD UN TRATTAMENTO GRATUITO PER LA DISINFESTAZIONE DA BLATTE</strong> (VALIDO SOLO PER ABITAZIONI SINGOLE)',
                 'prezzo' => null,
                 'valido_dal' => Carbon::parse('2026-04-01'),
                 'valido_al' => Carbon::parse('2026-05-31 23:59:59'),
@@ -40,7 +40,7 @@ class OfferSeeder extends Seeder
             [
                 'qr_page_id' => 1,
                 'titolo' => 'Promo giugno',
-                'descrizione' => '<strong style="color:red;">SCONTO 10% su tutti i servizi</strong>',
+                'descrizione' => 'PER IL MESE DI GIUGNO <br/><strong style="color:red;">AVRAI DIRITTO ALLO SCONTO DEL 10%</strong> SU TUTTI I NOSTRI SERVIZI',
                 'prezzo' => null,
                 'valido_dal' => Carbon::parse('2026-06-01'),
                 'valido_al' => Carbon::parse('2026-06-30 23:59:59'),
