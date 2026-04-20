@@ -12,10 +12,10 @@ class StatsOverview extends BaseWidget
     {
         $visiteTotali = QrVisit::count();
 
-        $visitatoriUnici = QrVisit::query()
-            ->select('ip')
-            ->distinct()
-            ->count();
+        $visitatoriUnici = QrVisit::selectRaw("
+            COUNT(DISTINCT CONCAT(ip, '|', COALESCE(user_agent, '')))
+            as totale
+        ")->value('totale');
 
         return [
             Stat::make('Visite totali', $visiteTotali),
