@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Offer extends Model
 {
@@ -28,6 +29,11 @@ class Offer extends Model
     public function page()
     {
         return $this->belongsTo(QrPage::class, 'qr_page_id');
+    }
+
+    public function qrPage(): BelongsTo
+    {
+        return $this->belongsTo(\App\Models\QrPage::class);
     }
 
     // 🔥 SCOPE: offerte attive per data
