@@ -40,6 +40,7 @@ class AdminPanelProvider extends PanelProvider
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\Filament\Widgets')
             ->widgets([
                 \App\Livewire\DashboardStats::class,
+                \App\Livewire\CtaStats::class,
                 \App\Livewire\VisitsChart::class,
                 \App\Livewire\RecentVisits::class,
             ])

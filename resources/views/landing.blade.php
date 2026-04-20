@@ -70,25 +70,33 @@
     <div class="row mt-4">
 
         <div class="col-12 col-md-6">
-            <a href="tel:0574603681" class="btn btn-warning btn-custom">
+            <a href="tel:0574603681"
+   class="btn btn-warning btn-custom"
+   onclick="trackEvent('click_call', {{ $page->id }})">
                 <i class="fa fa-phone"></i> CHIAMACI
             </a>
         </div>
 
         <div class="col-12 col-md-6">
-            <a href="https://wa.me/393281792408" class="btn btn-success btn-custom">
+            <a href="https://wa.me/393281792408"
+   class="btn btn-success btn-custom"
+   onclick="trackEvent('click_whatsapp', {{ $page->id }})">
                 <i class="fa fa-whatsapp"></i> WHATSAPP
             </a>
         </div>
 
         <div class="col-12 col-md-6">
-            <a href="https://www.pratoecologia.it/" class="btn btn-danger btn-custom">
+            <a href="https://www.pratoecologia.it/"
+   class="btn btn-danger btn-custom"
+   onclick="trackEvent('click_website', {{ $page->id }})">
                 <i class="fa fa-link"></i> SITO WEB
             </a>
         </div>
 
         <div class="col-12 col-md-6">
-            <a href="https://www.facebook.com/pratoecologia/" class="btn btn-primary btn-custom">
+            <a href="https://www.facebook.com/pratoecologia/"
+   class="btn btn-primary btn-custom"
+   onclick="trackEvent('click_facebook', {{ $page->id }})">
                 <i class="fa fa-facebook"></i> FACEBOOK
             </a>
         </div>
@@ -96,6 +104,20 @@
     </div>
 
 </div>
+<script>
+window.visitorId = "{{ request()->cookie('visitor_id') }}";
+function trackEvent(eventName, pageId) {
+    const data = JSON.stringify({
+        event: eventName,
+        qr_page_id: pageId,
+        visitor_id: window.visitorId
+    });
 
+    navigator.sendBeacon(
+        '/track-event',
+        new Blob([data], { type: 'application/json' })
+    );
+}
+</script>
 </body>
 </html>

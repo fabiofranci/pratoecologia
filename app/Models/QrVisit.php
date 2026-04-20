@@ -11,6 +11,7 @@ class QrVisit extends Model
         'ip',
         'user_agent',
         'device',
+        'visitor_id',
     ];
 
     protected $casts = [
